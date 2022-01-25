@@ -44,7 +44,7 @@ class Block {
             // Recalculate the hash of the Block
             // Comparing if the hashes changed
             // Returning the Block is not valid
-            let hash = SHA256(JSON.stringify(this)).toString();
+            let hash = SHA256(JSON.stringify( {...self, "hash": null})).toString();
             if(auxHash != hash){
                 resolve(false);
             }
